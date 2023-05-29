@@ -45,3 +45,29 @@ body{
 .img-ini{
     width: 100%;
 }
+@media screen and (min-width: 768px) {
+    .menu{
+        height: 120px;
+        background-color: rgb(202, 161, 240);  
+        color: antiquewhite;
+        font-size: 32px;
+      }
+      .conteudo{
+       display: flex;
+        
+    }
+}
+@media screen and (min-width: 1280px) {
+    .menu{
+        height: 120px;
+        background-color: rgb(206, 174, 236);  
+        color: black;
+        font-size: 50px;
+      }
+      .img-ini{
+        width: 50%;
+      }
+      .desc-solo{
+        display: grid;
+      }
+}
