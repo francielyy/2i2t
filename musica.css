@@ -105,22 +105,93 @@ ul{
     top: 0;
 }
 .conteudo-musica{
-     width: 100vw;
+   
      display: grid;
-     grid-template-columns: 100%;
-     text-align: center;
+     grid-template-columns: 50% 50%;
+    grid-template-areas: "def def";
 
 }
+.definicao{
+    display: flex;
+    width: 100vw;
+}
+.descricao{
+    height: 100%;
+    padding: 50px;
+    width: 70vw;
+}
+.img-definicao{
+    display: block;
+    text-align: end;
+    height: 30vh;
+    width: 30vw;
+}
+@media (min-width: 1024px){
+    .nav{
+     max-height: none;
+     top: 0;
+     position: relative;
+     float: right;
+     width: fit-content;
+     background-color: transparent;
+    }
+    .menu{
+     float: left;
+    }
+    .menu a:hover{
+     background-color: transparent;
+     color: var(--hover);
+    }
+}.img-definicao{
+    width:15vh;
+    height: 15vh; 
+}
+
+     
+ 
+    
+     
+ 
 .rodape{
     width: 100vw;
     background-color:var(--fundo);
     text-align: center  ;
 }
+
 .definicao{
     width: 100vw;
     padding: 5px;
+  
 }
-@media screen and (min-width: 600px){
+.desc-estilo {
+    width: 100%;
+    background-color: rgb(151, 97, 202);
+    grid-area: estilo;
+}
+.desc-solo {
+    width: 100%;
+    background-color: rgb(136, 76, 175);
+    grid-area: solo;
+}
+.desc-grupo {
+    width: 100%;
+    background-color: rgb(98, 39, 177);
+    grid-area: grupo;
+}
+.desc-banda {
+    width: 100%;
+    background-color: rgb(178, 22, 192);
+    grid-area: banda;
+}
+.desc-app {
+    width: 100%;
+    background-color: rgb(169, 62, 190);
+}
+.img-ini {
+    width: 100%;
+}
+
+@media (min-width: 1024px){
    .nav{
     max-height: none;
     top: 0;
@@ -149,10 +220,10 @@ ul{
 
    
    
-   @media screen and (min-width: 1280px){
+   @media screen and (min-width: 820px){
        .menu{
           height: 200px;
-          background-color: rgb(37, 37, 241);
+          background-color: var(--hover);
           font-size: 64px;
        }
        .img-ini{
