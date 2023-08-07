@@ -1,17 +1,34 @@
-*{
-    padding: 0;
-    margin: 0;
+/*
+*  html5resetcss
+*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
 
+* {
+    margin: 0;
+    padding: 0;
+    overflow: 0;
 }
 :root{
     --fundo: rgba(235, 166, 231, 0.863);
+    --fundo-claro: rgba(68, 231, 236, 0.863);
     --fonte: rgb(255, 255, 255);
     --hover: rgb(61, 7, 97);
-
-
 }
 body{
-    background-color: rgba(235, 166, 231, 0.863);
+    background-color: rgba(252, 253, 255, 0.822);
 }
 a {
     text-decoration: none;
@@ -20,22 +37,21 @@ ul{
     list-style-type: none;
 }
 .header{
-
-    background-color: var(--fonte);
-    width: 100%;
+    background-color: var(--fundo);
+    width: 100vw;
     position: sticky;
     top: 0;
 
 }
 .logo{
-    display: inline-block;
+   display: inline-block;
    color: var(--fundo);
    font-size: 32px;
   
 }
 #logo{
-  height: 5vh;
-
+  height: 10vh;
+  padding: 5px 5px;
 }
 .nav{
     width: 100%;
@@ -57,7 +73,7 @@ ul{
     max-height: 0;
     transition: max-height .1s ease-out;
 }
-.hamburger{
+.hamb{
     cursor: pointer;
     float: right;
     padding: 35px 20px;
@@ -90,147 +106,126 @@ ul{
     display: none;
 }
 .side-menu:checked ~ nav{
- max-height: 100%;
+    max-height: 100%;
 }
 
-.side-menu:checked ~ .hamburger .hamb-line{
+.side-menu:checked ~ .hamb .hamb-line{
     background: transparent;
 }
-.side-menu:checked ~ .hamburger .hamb-line::before{
+.side-menu:checked ~ .hamb .hamb-line::before{
     transform: rotate(-45deg);
     top: 0;
 }
-.side-menu:checked ~ .hamburger .hamb-line::after{
+.side-menu:checked ~ .hamb .hamb-line::after{
     transform: rotate(+45deg);
     top: 0;
 }
-.conteudo-musica{
-   
-     display: grid;
-     grid-template-columns: 50% 50%;
-    grid-template-areas: "def def";
 
-}
-.definicao{
-    display: flex;
+.conteudo-musica {
     width: 100vw;
 }
-.descricao{
-    height: 100%;
-    padding: 50px;
-    width: 70vw;
+
+.rodape {
+    width: 100vw;
+    background-color: var(--fundo);
+    text-align: center;
 }
-.img-definicao{
+
+.definicao {
     display: block;
-    text-align: end;
-    height: 30vh;
-    width: 30vw;
+    width: 100vw;
+    grid-area: def;
 }
-@media (min-width: 1024px){
+.img-definicao {
+    display: none;
+}
+.descricao {
+    width: 100vw;
+}
+#img-def {
+    width: 80%;
+}
+div[class^="item-"]{
+    background-color: var(--fundo-claro);
+    margin-top: 2px;
+    height: 300px;
+    grid-area: "item";
+}
+.info {
+    display: grid;
+}
+@media (min-width: 820px) {
     .nav{
-     max-height: none;
-     top: 0;
-     position: relative;
-     float: right;
-     width: fit-content;
-     background-color: transparent;
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
     }
-    .menu{
-     float: left;
+    .menu li{
+        float: left;
     }
     .menu a:hover{
-     background-color: transparent;
-     color: var(--hover);
+        background-color: transparent;
+        color: var(--gray);
     }
-}.img-definicao{
-    width:15vh;
-    height: 15vh; 
-}
-
-     
- 
-    
-     
- 
-.rodape{
-    width: 100vw;
-    background-color:var(--fundo);
-    text-align: center  ;
-}
-
-.definicao{
-    width: 100vw;
-    padding: 5px;
-  
-}
-.desc-estilo {
-    width: 100%;
-    background-color: rgb(151, 97, 202);
-    grid-area: estilo;
-}
-.desc-solo {
-    width: 100%;
-    background-color: rgb(136, 76, 175);
-    grid-area: solo;
-}
-.desc-grupo {
-    width: 100%;
-    background-color: rgb(98, 39, 177);
-    grid-area: grupo;
-}
-.desc-banda {
-    width: 100%;
-    background-color: rgb(178, 22, 192);
-    grid-area: banda;
-}
-.desc-app {
-    width: 100%;
-    background-color: rgb(169, 62, 190);
-}
-.img-ini {
-    width: 100%;
-}
-
-@media (min-width: 1024px){
-   .nav{
-    max-height: none;
-    top: 0;
-    position: relative;
-    float: right;
-    width: fit-content;
-    background-color: transparent;
-   }
-   .menu{
-    float: left;
-   }
-   .menu a:hover{
-    background-color: transparent;
-    color: var(--hover);
-   }
-   .hamburger{
-    display: none;
-   }
-   #logo{
-    width:25vh;
-    height: 25vh; 
-    
-
-   }
+    .hamb{
+        display: none;
     }
+    #logo {
+        width: 24vh;
+        height:24vh;
+    }
+    .definicao {
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+    }
+    .descricao {
+        height: 100%;
+        padding: 50px;
+        width: 70vw;
+    }
+    .img-definicao{
+        display: block;
+        text-align: end;
+        height: 30vh;
+        width: 30vw;
+    }
+    .frase-topo {
+        display: block;
+    }
+    .info {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "item" "item";
+    }
+    div[class^="item-"]{
+        margin-right: 2px;
+    }
+}
 
-   
-   
-   @media screen and (min-width: 820px){
-       .menu{
-          height: 200px;
-          background-color: var(--hover);
-          font-size: 64px;
-       }
-       .img-ini{
-           width: 50%;
-       }
-       .desc-solo{
-           display: flex;
-       }
-       
-      }
+@media (min-width: 1024px) {
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+    .menu li{
+        float: left;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--gray);
+    }
+    .hamb{
+        display: none;
+    }
+    #logo {
+        width: 16vh;
+        height: 16vh;
+    }   
+}
