@@ -145,6 +145,7 @@ ul{
 #img-def {
     width: 80%;
 }
+
 div[class^="item-"]{
     background-color: var(--fundo-claro);
     margin-top: 2px;
@@ -153,6 +154,11 @@ div[class^="item-"]{
 }
 .info {
     display: grid;
+}
+.mpb{
+   margin-top: 2px;
+    height: 300px;
+    grid-area: "item";
 }
 @media (min-width: 820px) {
     .nav{
